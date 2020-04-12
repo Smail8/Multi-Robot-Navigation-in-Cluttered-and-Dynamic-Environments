@@ -1,0 +1,529 @@
+#VRML_SIM R2018a utf8
+WorldInfo {
+  info [
+    "Description"
+    "Author: first name last name <e-mail>"
+    "Date: DD MMM YYYY"
+  ]
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.9999726390056417 0.007140570878476836 -0.0019322234917912295 1.5755514558751886
+  position -1.6370612088326986 5.5872510665772745 0.1688366326190467
+}
+PointLight {
+  intensity 0.5
+  location -1.06 0.58 -0.55
+  castShadows TRUE
+}
+PointLight {
+  intensity 0.5
+  location -1.63 0.53 -0.05
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DEF ground Solid {
+  translation -1.5 0 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          ambientIntensity 1
+          diffuseColor 1 1 1
+          emissiveColor 0.823529 0.6 0.34902
+          shininess 0
+          specularColor 0.196078 0.196078 0
+        }
+        texture ImageTexture {
+          url [
+            "textures/lightwood.png"
+          ]
+        }
+        textureTransform TextureTransform {
+          center 0.46 0
+          rotation -0.32
+          translation -1.01 0
+        }
+      }
+      geometry DEF ground_geo IndexedFaceSet {
+        coord Coordinate {
+          point [
+            -1.6 0 -1
+            -1.6 0 1
+            1.6 0 1
+            1.6 0 -1
+          ]
+        }
+        texCoord TextureCoordinate {
+          point [
+            0 0
+            0 5
+            5 5
+            5 0
+          ]
+        }
+        coordIndex [
+          0, 1, 2, 3, -1
+        ]
+        texCoordIndex [
+          0, 1, 2, 3, -1
+        ]
+      }
+    }
+  ]
+  boundingObject USE ground_geo
+}
+DEF long_rock_3 Solid {
+  translation -2 0 0
+  rotation 0 1 0 1.5708
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+        texture ImageTexture {
+          url [
+            "textures/stone-2.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.6 0.2 0.01
+      }
+    }
+  ]
+  name "short brick"
+  boundingObject DEF U_END_BOX Box {
+    size 0.6 0.2 0.01
+  }
+}
+DEF long_rock_4 Solid {
+  translation -1.9 0 0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+        texture ImageTexture {
+          url [
+            "textures/stone-2.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.01
+      }
+    }
+  ]
+  name "short brick"
+  boundingObject DEF U_END_BOX Box {
+    size 0.2 0.2 0.01
+  }
+}
+DEF long_rock_6 Solid {
+  translation -1.9 0 -0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+        texture ImageTexture {
+          url [
+            "textures/stone-2.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.01
+      }
+    }
+  ]
+  name "short brick"
+  boundingObject DEF U_END_BOX Box {
+    size 0.2 0.2 0.01
+  }
+}
+DEF long_rock_8 Solid {
+  rotation 0 1 0 1.5708
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+        texture ImageTexture {
+          url [
+            "textures/stone-2.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.6 0.2 0.01
+      }
+    }
+  ]
+  name "short brick"
+  boundingObject DEF U_END_BOX Box {
+    size 0.6 0.2 0.01
+  }
+}
+DEF long_rock_9 Solid {
+  translation -0.1 0 0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+        texture ImageTexture {
+          url [
+            "textures/stone-2.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.01
+      }
+    }
+  ]
+  name "short brick"
+  boundingObject DEF U_END_BOX Box {
+    size 0.2 0.2 0.01
+  }
+}
+DEF long_rock_11 Solid {
+  translation -0.1 0 -0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+        texture ImageTexture {
+          url [
+            "textures/stone-2.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.01
+      }
+    }
+  ]
+  name "short brick"
+  boundingObject DEF U_END_BOX Box {
+    size 0.2 0.2 0.01
+  }
+}
+Supervisor {
+  children [
+    DEF emitter Emitter {
+      channel 1
+    }
+  ]
+  name "super0"
+}
+Supervisor {
+  children [
+    DEF emitter Emitter {
+      channel 2
+    }
+  ]
+  name "super1"
+}
+DEF epuck0 E-puck {
+  hidden position_0_0 1.1031697622133037
+  hidden position_0_1 1.098748606073011
+  hidden linearVelocity_0 -0.10798489220600596 -3.4000634394478148e-6 -0.0001201468284467814
+  hidden angularVelocity_0 -4.134675477391016e-5 -0.05291356200532469 0.03981884229270086
+  hidden rotation_1 -1 0 0 1.1031697622133039
+  hidden linearVelocity_1 -0.10955658301322053 -3.0564387843546003e-6 -0.00012177856348865073
+  hidden angularVelocity_1 -0.006090701594059229 -0.05297100153090043 5.484575325320734
+  hidden rotation_2 -1 0 0 1.0987486060730112
+  hidden linearVelocity_2 -0.10681119720256393 -4.66394332965251e-6 -0.00011855392373438613
+  hidden angularVelocity_2 -0.005926042511102933 -0.05296284804329126 5.333855802012154
+  translation -0.12082156395355025 -3.1777226458293284e-5 -9.547461594421276e-6
+  rotation 4.507302917576614e-5 0.9999999980859315 -4.2385834244114776e-5 1.5689055119435829
+  name "epuck0"
+  controller "reynolds1"
+  emitter_channel 0
+  receiver_channel 0
+  groundSensorsSlot [
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck1 E-puck {
+  hidden position_0_0 0.5322422282386874
+  hidden position_0_1 0.5380700416340398
+  hidden linearVelocity_0 -0.11091386726611316 5.7510461345794774e-5 0.00015963189231662673
+  hidden angularVelocity_0 -0.00016805688296623873 -0.06515151037000111 0.21003622970544894
+  hidden rotation_1 -1 0 0 0.5322422282386873
+  hidden linearVelocity_1 -0.11367673022907959 -7.455952585810893e-5 0.00016126841848427425
+  hidden angularVelocity_1 0.008068095715256017 -0.06493995242587292 5.692470450962005
+  hidden rotation_2 -1 0 0 0.53807004163404
+  hidden linearVelocity_2 -0.11025173407609522 -6.877431964262833e-5 0.0001595477025508406
+  hidden angularVelocity_2 0.00797324757267605 -0.06489772287672528 5.5040706849974095
+  translation -0.10885334004413229 -3.5870017833077375e-5 -0.0999943022559169
+  rotation 0.0037520251470869637 0.9999859897410358 -0.0037339829856129205 1.570877092488172
+  name "epuck1"
+  controller "reynolds1"
+  emitter_channel 0
+  receiver_channel 0
+  groundSensorsSlot [
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck2 E-puck {
+  hidden position_0_0 -0.10773365201464051
+  hidden position_0_1 -0.2684789057996926
+  hidden linearVelocity_0 -0.04763120745607197 -0.00017004445912090685 -0.0004003972068460834
+  hidden angularVelocity_0 -0.0029693262026019383 -3.313613355607016 2.3320804254854215
+  hidden rotation_1 0.9999999999999999 0 0 0.10773365201464062
+  hidden linearVelocity_1 -0.145436744290618 -0.00010420261688355302 -0.00020818864970220533
+  hidden angularVelocity_1 -0.011017315308708645 -3.313800674288415 7.688914567219417
+  hidden rotation_2 1 0 0 0.26847890579969325
+  hidden linearVelocity_2 0.02687760935960881 -0.0001054012458066024 3.2437123201374844e-5
+  hidden angularVelocity_2 0.002248237412851231 -3.313772575061604 -2.2711565590415894
+  translation -0.09454562798401847 -3.6300706043719544e-5 0.09999127135555144
+  rotation -0.008780692692856555 0.9999181057211285 0.009310278562081688 1.5165521868910607
+  name "epuck2"
+  controller "reynolds1"
+  emitter_channel 0
+  receiver_channel 0
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck3 E-puck {
+  hidden position_0_0 -0.8156962581268734
+  hidden position_0_1 -0.9369531547389863
+  hidden linearVelocity_0 0.058857144831125974 -2.067726581074684e-5 0.0010691983164218338
+  hidden angularVelocity_0 0.011486747822496379 -1.5667896749645531 -0.6938991246368277
+  hidden rotation_1 1 0 0 0.8156962581268732
+  hidden linearVelocity_1 0.0215836530393681 -1.5527822705552137e-5 0.000399956912743641
+  hidden angularVelocity_1 0.0167723127326021 -1.5673694653663068 -0.8822372462162331
+  hidden rotation_2 1 0 0 0.9369531547389862
+  hidden linearVelocity_2 0.10304976296747131 -1.661522843536818e-5 0.001763238112540163
+  hidden angularVelocity_2 0.09133184866297292 -1.5674415308314826 -5.346694637955841
+  translation -0.08233913372489246 -3.216005325255497e-5 -0.1998252319500953
+  rotation 0.002768727310518611 0.9999922480985031 -0.00279962354291972 1.5290581504031628
+  name "epuck3"
+  controller "reynolds1"
+  emitter_channel 0
+  receiver_channel 0
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck4 E-puck {
+  hidden position_0_0 -1.5877117504175546
+  hidden position_0_1 -1.3961278946284408
+  hidden linearVelocity_0 0.03598279222420295 5.302906816927109e-6 -0.0007957570051470356
+  hidden angularVelocity_0 -0.03499417604920119 2.828888170896177 -1.6593322866210125
+  hidden rotation_1 1 0 0 1.5877117504175546
+  hidden linearVelocity_1 0.11779926182245576 -1.2050474936797993e-6 -0.0025375606395712084
+  hidden angularVelocity_1 -0.13452311624031482 2.8300526060549602 -6.242652969875006
+  hidden rotation_2 1 0 0 1.3961278946284406
+  hidden linearVelocity_2 -0.029295720653695248 -1.9250857254737944e-6 0.0005492047661502875
+  hidden angularVelocity_2 0.03514174384346651 2.829752136103685 1.8190819003306036
+  translation -0.07031142388348362 -2.5876005228910384e-5 0.19979141942978568
+  rotation 0.01353103709725588 0.9998127390153483 -0.013834664350825523 1.6372617606054949
+  name "epuck4"
+  controller "reynolds1"
+  emitter_channel 0
+  receiver_channel 0
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck5 E-puck {
+  hidden position_0_0 -1.5487986577171329
+  hidden position_0_1 -1.5361381680125072
+  hidden linearVelocity_0 -0.09213826140855935 -8.514089911434078e-7 0.00045830545311580865
+  hidden angularVelocity_0 0.00013128434443831808 0.013310134235639696 0.021719961550831883
+  hidden rotation_1 1 0 0 1.5487986577171329
+  hidden linearVelocity_1 -0.09259267185410014 -7.704284356923997e-7 0.0004607358571031783
+  hidden angularVelocity_1 0.02304212424707146 0.013482969854817766 4.631182988161812
+  hidden rotation_2 1 0 0 1.5361381680125075
+  hidden linearVelocity_2 -0.09190099086417218 -2.3698324417287384e-6 0.0004572162495365739
+  hidden angularVelocity_2 0.02285553656290889 0.013480659313312889 4.593503328501454
+  translation -1.9306995581895219 -3.192436996244004e-5 8.8211207548865e-5
+  rotation -0.0002498713082612682 0.9999999368288911 -0.00025279743486476505 -1.5657066961120607
+  name "epuck5"
+  controller "reynoldsx"
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck6 E-puck {
+  hidden position_0_0 -1.548798657717134
+  hidden position_0_1 -1.5361381372967144
+  hidden linearVelocity_0 -0.09213826139242344 -8.51409023141512e-7 0.00045830554719334494
+  hidden angularVelocity_0 0.00013128436162674806 0.013310134230412914 0.021719960496917736
+  hidden rotation_1 0.9999999999999999 0 0 1.548798657717134
+  hidden linearVelocity_1 -0.09259267183256588 -7.704284351594912e-7 0.0004607359516018498
+  hidden angularVelocity_1 0.02304212897338484 0.013482969850588191 4.631182987084505
+  hidden rotation_2 1 0 0 1.5361381372967144
+  hidden linearVelocity_2 -0.09190099084288948 -2.369832438442488e-6 0.0004572163433310169
+  hidden angularVelocity_2 0.02285554125110653 0.013480659308990544 4.593503327424267
+  translation -1.9306995581635449 -3.1924369965215596e-5 -0.09991178876103883
+  rotation -0.0002498711756603693 0.9999999368289576 -0.00025279730280768076 -1.5657066950903513
+  name "epuck6"
+  controller "reynoldsx"
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck7 E-puck {
+  hidden position_0_0 -1.5487986577171282
+  hidden position_0_1 -1.536138168012509
+  hidden linearVelocity_0 -0.09213826140855434 -8.514089925644644e-7 0.0004583054531106058
+  hidden angularVelocity_0 0.0001312843446053335 0.013310134235587173 0.02171996155061759
+  hidden rotation_1 1 0 0 1.5487986577171282
+  hidden linearVelocity_1 -0.09259267185409534 -7.704284341824958e-7 0.0004607358570979311
+  hidden angularVelocity_1 0.023042124246775764 0.013482969854764725 4.631182988161587
+  hidden rotation_2 1 0 0 1.536138168012509
+  hidden linearVelocity_2 -0.09190099086416764 -2.3698324423504564e-6 0.00045721624953305593
+  hidden angularVelocity_2 0.022855536562963536 0.013480659313230224 4.593503328501218
+  translation -1.9306995581895217 -3.192436996253718e-5 0.10008821120754872
+  rotation -0.00024987130824493124 0.9999999368288911 -0.00025279743484808167 -1.5657066961120727
+  name "epuck7"
+  controller "reynoldsx"
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck8 E-puck {
+  hidden position_0_0 -1.5722103575414252
+  hidden position_0_1 -1.542367829001751
+  hidden linearVelocity_0 -0.09330975031089224 -6.203642310490914e-7 0.001068872632102993
+  hidden angularVelocity_0 0.0002702249842321575 -0.006707404559022495 0.020600275823895776
+  hidden rotation_1 1 0 0 1.5722103575414252
+  hidden linearVelocity_1 -0.09323726883104475 -7.606175122409985e-7 0.0010680923320203093
+  hidden angularVelocity_1 0.05341412005552098 -0.0062721269881763145 4.661216261583936
+  hidden rotation_2 1 0 0 1.542367829001751
+  hidden linearVelocity_2 -0.09358852319053206 -2.352004190941905e-6 0.0010722933386622694
+  hidden angularVelocity_2 0.053605311285739046 -0.00628987148288785 4.6800551094546075
+  translation -1.9309952749150114 -3.190239151611672e-5 -0.19980778039353
+  rotation -0.0009463317290972728 0.9999991033381738 -0.0009475120615348097 -1.5596644463585387
+  name "epuck8"
+  controller "reynoldsx"
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
+DEF epuck9 E-puck {
+  hidden position_0_0 -1.5487986577171342
+  hidden position_0_1 -1.536138168012512
+  hidden linearVelocity_0 -0.09213826140855837 -8.514089942697926e-7 0.0004583054531112085
+  hidden angularVelocity_0 0.00013128434454663245 0.013310134235627342 0.021719961550928747
+  hidden rotation_1 0.9999999999999999 0 0 1.5487986577171342
+  hidden linearVelocity_1 -0.09259267185410244 -7.704284342713465e-7 0.00046073585709859597
+  hidden angularVelocity_1 0.02304212424682515 0.013482969854839554 4.631182988161924
+  hidden rotation_2 0.9999999999999999 0 0 1.536138168012512
+  hidden linearVelocity_2 -0.09190099086417351 -2.3698324419063862e-6 0.00045721624953334037
+  hidden angularVelocity_2 0.022855536563049443 0.01348065931326342 4.593503328501579
+  translation -1.9306995581895217 -3.192436996231687e-5 0.20008821120754858
+  rotation -0.000249871308253836 0.9999999368288911 -0.0002527974348559379 -1.5657066961120711
+  name "epuck9"
+  controller "reynoldsx"
+  groundSensorsSlot [
+    Emitter {
+      name "emitter2"
+      type "infra-red"
+      channel 1
+    }
+    Receiver {
+      name "receiver2"
+      type "infra-red"
+      channel 1
+    }
+  ]
+}
